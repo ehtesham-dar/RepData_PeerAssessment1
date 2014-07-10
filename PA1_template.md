@@ -194,8 +194,8 @@ impune_data$days <- "Weekdays"
 impute_new <- unique(activity$date)
 
 for (i in 1:length(impute_new)) {
-    if (weekdays(as.Date(impute_new[i])) == "Samstag" || weekdays(as.Date(impute_new[i])) == 
-        "Sonnstag") {
+    if (weekdays(as.Date(impute_new[i])) == "Saturday" || weekdays(as.Date(impute_new[i])) == 
+        "Sunday") {
         rep <- which(impune_data$date == impute_new[i])
         impune_data$days[rep[1]:rep[length(rep)]] = "Weekend"
     }
