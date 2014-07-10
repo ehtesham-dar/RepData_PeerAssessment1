@@ -195,7 +195,7 @@ impute_new <- unique(activity$date)
 
 for (i in 1:length(impute_new)) {
     if (weekdays(as.Date(impute_new[i])) == "Samstag" || weekdays(as.Date(impute_new[i])) == 
-        "Sontag") {
+        "Sonnstag") {
         rep <- which(impune_data$date == impute_new[i])
         impune_data$days[rep[1]:rep[length(rep)]] = "Weekend"
     }
@@ -203,7 +203,7 @@ for (i in 1:length(impute_new)) {
 ```
 
     Note:
-    In case of localization one part of the graph shows missing, which is not an error. To run correctly change the name of Saturday and sunday with corresponding local names and everthing will work fine.
+    In case of localization one part of the graph shows missing (at least in my case), which is not an error. To run correctly change the name of Saturday and sunday with corresponding local names and everything will work fine(e.g. if you are working with German Windows then the names of Saturday and Sunday will changed into Samstag and Sonntag respectively and then graps will show correctly).
 
 Then weekdays and weekends data plot is shown below
 
